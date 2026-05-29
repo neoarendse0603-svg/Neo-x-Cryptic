@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neo x Cryptic | Confidence Through Movement</title>
+  <meta name="description" content="Hip-Hop freestyle, battle development and movement mentorship with Neo x Cryptic. Raw energy. Real foundations. Confidence through movement." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Cryptic" />
+  <meta name="theme-color" content="#050505" />
+  <meta property="og:title" content="Neo x Cryptic | Confidence Through Movement" />
+  <meta property="og:description" content="Hip-Hop freestyle, battle development and movement mentorship with Neo x Cryptic." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/motion-white-energy.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-2: #0a0a0a;
+      --panel: #101010;
+      --panel-2: #161616;
+      --text: #f5f5f5;
+      --muted: #bcbcbc;
+      --line: rgba(255,255,255,0.08);
+      --line-2: rgba(255,255,255,0.05);
+      --neon-green: #00ff88;
+      --neon-cyan: #00e5ff;
+      --neon-purple: #9b5cff;
+      --neon-pink: #ff00b8;
+      --neon-red: #ff2b2b;
+      --shadow: 0 24px 80px rgba(0,0,0,0.45);
+      --radius: 22px;
+      --radius-lg: 34px;
+      --max: 1320px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(0,229,255,0.05), transparent 20%),
+        radial-gradient(circle at 86% 14%, rgba(255,0,184,0.05), transparent 20%),
+        radial-gradient(circle at 70% 80%, rgba(255,43,43,0.04), transparent 18%),
+        linear-gradient(180deg, #050505 0%, #0b0b0b 45%, #050505 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 220px 220px;
+      opacity: 0.04;
+      mix-blend-mode: overlay;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .site-wrap { position: relative; z-index: 2; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .ticker {
+      background: linear-gradient(90deg, var(--neon-green) 0%, var(--neon-cyan) 35%, var(--neon-pink) 72%, var(--neon-red) 100%);
+      padding: 12px 0;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 28px rgba(255,0,184,0.14);
+    }
+
+    .ticker::before,
+    .ticker::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .ticker::before {
+      background: repeating-linear-gradient(90deg, rgba(0,0,0,0.05) 0, rgba(0,0,0,0.05) 1px, transparent 1px, transparent 22px);
+      opacity: 0.35;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 42px;
+      min-width: max-content;
+      animation: tickerMove 20s linear infinite;
+      padding-left: 12px;
+    }
+
+    .ticker-item {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.18em;
+      color: #050505;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    @keyframes tickerMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(5,5,5,0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 0.9;
+    }
+
+    .brand-main {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(26px, 3vw, 38px);
+      letter-spacing: 0.08em;
+    }
+
+    .brand-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--neon-green);
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--neon-cyan); }
+
+    .nav-cta {
+      padding: 10px 14px;
+      border: 1px solid rgba(255,43,43,0.45);
+      border-radius: 999px;
+      color: #fff !important;
+      background: rgba(255,43,43,0.08);
+      box-shadow: 0 0 18px rgba(255,43,43,0.12);
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(84svh, 820px);
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding: clamp(24px, 4vw, 52px) 0 clamp(18px, 3vw, 36px);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 28%, rgba(0,229,255,0.1) 0%, transparent 26%),
+        radial-gradient(circle at 80% 22%, rgba(255,0,184,0.1) 0%, transparent 22%),
+        radial-gradient(circle at 74% 72%, rgba(255,43,43,0.08) 0%, transparent 18%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: clamp(28px, 4vw, 60px);
+      align-items: center;
+      overflow: visible;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--neon-green);
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--neon-red);
+      box-shadow: 0 0 10px rgba(255,43,43,0.45);
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(62px, 12.4vw, 150px);
+      line-height: 0.86;
+      letter-spacing: 0.028em;
+      text-transform: uppercase;
+      text-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      transform: rotate(-0.8deg);
+      background: linear-gradient(90deg, #ffffff 0%, #ffffff 42%, var(--neon-cyan) 64%, var(--neon-pink) 82%, var(--neon-red) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-left: clamp(8px, 1.2vw, 18px);
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.28));
+      max-width: 7.2ch;
+      animation: titlePulse 5.8s ease-in-out infinite alternate;
+    }
+
+    .hero-title .slash {
+      color: var(--neon-red);
+      text-shadow: 0 0 18px rgba(255,43,43,0.32);
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin-top: 20px;
+      font-size: clamp(15px, 1.65vw, 18px);
+      line-height: 1.78;
+      color: rgba(255,255,255,0.8);
+      position: relative;
+      z-index: 3;
+      padding-left: clamp(10px, 1.4vw, 20px);
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding-left: clamp(10px, 1.4vw, 20px);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
+      color: #050505;
+      box-shadow: 0 12px 24px rgba(0,255,136,0.16);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.12);
+      color: #fff;
+    }
+
+    .hero-visual-wrap {
+      position: relative;
+      min-height: clamp(420px, 52vw, 690px);
+    }
+
+    .hero-scribble {
+      position: absolute;
+      inset: 8% 2% 6% 10%;
+      border: 1px dashed rgba(255,255,255,0.06);
+      clip-path: polygon(8% 0, 100% 0, 100% 82%, 92% 100%, 0 100%, 0 18%);
+      transform: rotate(-4deg);
+      pointer-events: none;
+    }
+
+    .hero-card {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #0c0c0c;
+      box-shadow: var(--shadow);
+      clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      inset: -22% -40%;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        linear-gradient(105deg, transparent 0%, rgba(0,229,255,0.16) 42%, rgba(255,0,184,0.2) 50%, transparent 62%),
+        linear-gradient(112deg, transparent 18%, rgba(255,43,43,0.12) 50%, transparent 70%);
+      transform: translateX(-38%) rotate(-8deg);
+      mix-blend-mode: screen;
+      opacity: 0.68;
+      animation: energySweep 4.8s ease-in-out infinite;
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/motion-white-energy.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: #0c0c0c;
+      transform: scale(1);
+      will-change: transform;
+      filter: saturate(1.02) contrast(1.04) brightness(0.96);
+    }
+
+    .hero-smoke {
+      position: absolute;
+      inset: -18% 30% -8% -22%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+      opacity: 0.78;
+      mix-blend-mode: screen;
+      filter: blur(1px);
+    }
+
+    .hero-smoke::before,
+    .hero-smoke::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 16% 74%, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.11) 22%, transparent 48%),
+        radial-gradient(ellipse at 36% 58%, rgba(0,229,255,0.2) 0%, rgba(0,229,255,0.08) 26%, transparent 54%),
+        radial-gradient(ellipse at 20% 34%, rgba(255,0,184,0.16) 0%, rgba(255,0,184,0.06) 24%, transparent 50%),
+        radial-gradient(ellipse at 48% 80%, rgba(255,43,43,0.14) 0%, rgba(255,43,43,0.05) 20%, transparent 46%);
+      background-size: 58% 44%, 68% 52%, 54% 46%, 62% 48%;
+      background-position: 2% 74%, 24% 54%, 10% 26%, 30% 86%;
+      background-repeat: no-repeat;
+      filter: blur(26px);
+      transform-origin: 24% 66%;
+      animation: heroSmokeDrift 12s ease-in-out infinite alternate;
+    }
+
+    .hero-smoke::after {
+      inset: -8% -12% 4% 6%;
+      opacity: 0.62;
+      background:
+        radial-gradient(ellipse at 18% 66%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.08) 26%, transparent 56%),
+        radial-gradient(ellipse at 42% 46%, rgba(0,229,255,0.18) 0%, rgba(0,229,255,0.06) 24%, transparent 52%),
+        radial-gradient(ellipse at 26% 22%, rgba(255,0,184,0.14) 0%, rgba(255,0,184,0.05) 22%, transparent 50%);
+      background-size: 70% 48%, 60% 42%, 58% 38%;
+      background-position: 0% 74%, 30% 44%, 12% 18%;
+      animation: heroSmokeCurl 16s ease-in-out infinite;
+    }
+
+    @keyframes heroSmokeDrift {
+      0% {
+        opacity: 0.58;
+        transform: translate3d(-8%, 8%, 0) rotate(-7deg) scale(1);
+      }
+      50% {
+        opacity: 0.88;
+        transform: translate3d(8%, -8%, 0) rotate(4deg) scale(1.14);
+      }
+      100% {
+        opacity: 0.66;
+        transform: translate3d(18%, -18%, 0) rotate(10deg) scale(1.28);
+      }
+    }
+
+    @keyframes heroSmokeCurl {
+      0% {
+        opacity: 0.36;
+        transform: translate3d(-10%, 14%, 0) rotate(5deg) scale(0.95);
+      }
+      45% {
+        opacity: 0.7;
+        transform: translate3d(10%, -4%, 0) rotate(-8deg) scale(1.12);
+      }
+      100% {
+        opacity: 0.42;
+        transform: translate3d(24%, -22%, 0) rotate(-15deg) scale(1.32);
+      }
+    }
+
+    @keyframes energySweep {
+      0%, 100% {
+        opacity: 0.22;
+        transform: translateX(-46%) rotate(-8deg);
+      }
+      45%, 58% {
+        opacity: 0.72;
+        transform: translateX(34%) rotate(-8deg);
+      }
+    }
+
+    @keyframes titlePulse {
+      0% { filter: drop-shadow(0 8px 16px rgba(0,0,0,0.28)); }
+      100% { filter: drop-shadow(0 0 22px rgba(0,229,255,0.2)); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,0.08) 0%, transparent 18%),
+        radial-gradient(circle at 74% 44%, rgba(0,229,255,0.12) 0%, transparent 24%),
+        radial-gradient(circle at 76% 22%, rgba(255,0,184,0.1) 0%, transparent 20%),
+        linear-gradient(180deg, rgba(5,5,5,0.12) 0%, rgba(5,5,5,0.08) 34%, rgba(5,5,5,0.34) 100%);
+    }
+
+    .hero-stamp {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 3;
+      background: rgba(5,5,5,0.68);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 16px;
+      width: min(240px, 66%);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 18px 30px rgba(0,0,0,0.22);
+    }
+
+    .stamp-kicker {
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--neon-pink);
+      margin-bottom: 8px;
+    }
+
+    .stamp-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .stamp-copy {
+      font-size: 12px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .section {
+      position: relative;
+      padding: clamp(48px, 6vw, 86px) 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: clamp(18px, 3vw, 42px);
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    #skills .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.98fr) minmax(320px, 0.82fr);
+      align-items: center;
+      max-width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
+      gap: clamp(18px, 2.5vw, 34px);
+    }
+
+    .section-head.centered {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .section-head.centered .section-title {
+      transform: rotate(-0.6deg);
+    }
+
+    .section-kicker {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--neon-cyan);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(44px, 8vw, 86px);
+      line-height: 0.88;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transform: rotate(-1deg);
+      text-shadow: 0 12px 28px rgba(0,0,0,0.28);
+      background: linear-gradient(90deg, #ffffff 0%, #ffffff 54%, var(--neon-cyan) 78%, var(--neon-pink) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-note {
+      max-width: 520px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.68);
+    }
+
+    .highlight {
+      color: #fff;
+      font-weight: 800;
+      background: linear-gradient(90deg, rgba(0,229,255,0.18), rgba(255,0,184,0.18));
+      box-shadow: inset 0 -0.42em 0 rgba(0,229,255,0.12);
+      padding: 0 0.08em;
+    }
+
+    .about-top {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.88fr);
+      gap: clamp(22px, 3.2vw, 44px);
+      align-items: center;
+      justify-content: center;
+      max-width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: clamp(18px, 2.8vw, 30px);
+    }
+
+    .about-title-wrap {
+      max-width: 720px;
+      padding-left: clamp(8px, 1vw, 16px);
+      overflow: visible;
+    }
+
+    .about-title-wrap .section-kicker {
+      margin-bottom: 14px;
+    }
+
+    .about-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(56px, 10vw, 126px);
+      line-height: 0.9;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      text-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      transform: rotate(-1deg);
+      max-width: 6.4ch;
+      background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 38%, var(--neon-cyan) 68%, var(--neon-pink) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-left: clamp(4px, 0.8vw, 10px);
+      overflow: visible;
+    }
+
+    .about-intro {
+      max-width: 620px;
+      font-size: clamp(17px, 1.65vw, 21px);
+      line-height: 1.55;
+      color: rgba(255,255,255,0.86);
+      justify-self: end;
+    }
+
+    .about-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
+      gap: clamp(22px, 3vw, 38px);
+      align-items: stretch;
+    }
+
+    #about {
+      overflow: hidden;
+      padding-top: clamp(38px, 5vw, 68px);
+    }
+
+    #about::after {
+      content: 'CRYPTIC';
+      position: absolute;
+      right: clamp(24px, 6vw, 96px);
+      top: clamp(86px, 12vw, 150px);
+      transform: rotate(-5deg);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(92px, 15vw, 240px);
+      line-height: 0.8;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.07);
+      text-shadow: 0 0 34px rgba(0,229,255,0.12), 0 0 70px rgba(255,0,184,0.08);
+      pointer-events: none;
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    .about-motion-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.34;
+      overflow: hidden;
+    }
+
+    .about-motion-bg::before,
+    .about-motion-bg::after {
+      content: '';
+      position: absolute;
+      inset: -16% -10%;
+      background-image: url('assets/motion-white-energy.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(14px) saturate(1.2);
+      opacity: 0.22;
+      transform: scale(1.12);
+      animation: motionBackdrop 12s ease-in-out infinite alternate;
+    }
+
+    .about-motion-bg::after {
+      background-image: url('assets/motion-red-energy.jpg');
+      mix-blend-mode: screen;
+      opacity: 0.18;
+      animation: motionBackdropAlt 14s ease-in-out infinite alternate;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: clamp(390px, 42vw, 600px);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #0c0c0c;
+      box-shadow: var(--shadow);
+      clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 26px 100%, 0 calc(100% - 26px));
+    }
+
+    .about-img {
+      position: absolute;
+      inset: -4%;
+      background-image: url('assets/cypher-portrait.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 28%;
+      transform: scale(1.08);
+      will-change: transform;
+      filter: brightness(1.08) contrast(0.98) saturate(0.92);
+    }
+
+    .about-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(5,5,5,0.3) 0%, rgba(5,5,5,0.02) 36%, rgba(5,5,5,0.52) 100%),
+        radial-gradient(circle at 18% 24%, rgba(0,229,255,0.1) 0%, transparent 24%),
+        radial-gradient(circle at 78% 18%, rgba(255,0,184,0.12) 0%, transparent 24%),
+        radial-gradient(circle at 74% 82%, rgba(255,43,43,0.08) 0%, transparent 18%);
+    }
+
+    .about-noise {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(115deg, transparent 0, transparent 72px, rgba(255,255,255,0.012) 72px, rgba(255,255,255,0.012) 74px);
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .about-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      padding: clamp(8px, 1.4vw, 14px) 0;
+    }
+
+    .about-copy-lead {
+      font-size: clamp(22px, 2.4vw, 34px);
+      line-height: 1.24;
+      color: rgba(255,255,255,0.92);
+      max-width: 20ch;
+      font-weight: 800;
+    }
+
+    .about-copy p {
+      font-size: 15px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.78);
+    }
+
+    @keyframes motionBackdrop {
+      0% { transform: translate3d(-3%, 2%, 0) scale(1.1) rotate(-1deg); }
+      100% { transform: translate3d(3%, -2%, 0) scale(1.2) rotate(1.5deg); }
+    }
+
+    @keyframes motionBackdropAlt {
+      0% { transform: translate3d(4%, -1%, 0) scale(1.14) rotate(1deg); }
+      100% { transform: translate3d(-4%, 2%, 0) scale(1.24) rotate(-2deg); }
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .mini-stat {
+      padding: 16px 14px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: 18px;
+    }
+
+    .mini-stat .num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 0.9;
+      color: var(--neon-green);
+    }
+
+    .mini-stat .label {
+      margin-top: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .skill-card {
+      position: relative;
+      padding: 20px 18px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(18,18,18,0.92), rgba(10,10,10,0.92));
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 42px; height: 2px;
+      background: var(--neon-red);
+      box-shadow: 0 0 12px rgba(255,43,43,0.4);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px) rotate(-0.5deg);
+      border-color: rgba(0,229,255,0.24);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.26);
+    }
+
+    .skill-card:nth-child(2),
+    .skill-card:nth-child(3) {
+      animation: cardPulse 6s ease-in-out infinite alternate;
+    }
+
+    .skill-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(28px, 4vw, 38px);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .skill-copy {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.68);
+    }
+
+    .training-banner {
+      position: relative;
+      min-height: clamp(520px, 74vw, 820px);
+      overflow: hidden;
+      background: #070707;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .training-banner::after {
+      content: '';
+      position: absolute;
+      inset: -30% -20%;
+      pointer-events: none;
+      background:
+        linear-gradient(105deg, transparent 20%, rgba(0,229,255,0.14) 46%, rgba(255,0,184,0.16) 54%, transparent 76%),
+        radial-gradient(circle at 68% 42%, rgba(255,43,43,0.12), transparent 26%);
+      mix-blend-mode: screen;
+      opacity: 0.46;
+      animation: bannerEnergy 7s ease-in-out infinite;
+    }
+
+    .training-banner-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/rooftop-freeze-sunset.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: #070707;
+      transform: scale(1);
+      will-change: transform;
+      filter: contrast(1.06) saturate(1.03) brightness(1.02);
+    }
+
+    .training-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(100deg, rgba(5,5,5,0.42) 0%, rgba(5,5,5,0.08) 34%, rgba(5,5,5,0.18) 100%),
+        linear-gradient(to top, rgba(5,5,5,0.28) 0%, rgba(5,5,5,0.04) 36%, rgba(5,5,5,0.08) 100%),
+        radial-gradient(circle at 18% 24%, rgba(0,229,255,0.06) 0%, transparent 24%),
+        radial-gradient(circle at 82% 22%, rgba(255,0,184,0.08) 0%, transparent 24%);
+    }
+
+    .training-banner-card {
+      position: relative;
+      z-index: 3;
+      padding: clamp(22px, 3vw, 34px);
+      width: min(380px, 88%);
+      margin: clamp(24px, 4vw, 42px);
+      background: rgba(6,6,6,0.58);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 22px 48px rgba(0,0,0,0.26);
+    }
+
+    .training-banner-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 0.88;
+      letter-spacing: 0.05em;
+      transform: rotate(-1.5deg);
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, var(--neon-cyan) 76%, var(--neon-pink) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .training-banner-card p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .program-card {
+      position: relative;
+      border-radius: 24px;
+      padding: 22px 20px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(18,18,18,0.96), rgba(10,10,10,0.96));
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .program-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, rgba(0,229,255,0.03), transparent 34%, rgba(255,43,43,0.03) 100%);
+      pointer-events: none;
+    }
+
+    .program-card:hover {
+      transform: translateY(-4px) rotate(-0.5deg);
+      border-color: rgba(255,255,255,0.14);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.28);
+    }
+
+    .program-card:nth-child(2) {
+      border-color: rgba(0,229,255,0.22);
+      box-shadow: 0 18px 42px rgba(0,229,255,0.06);
+    }
+
+    .program-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .program-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(34px, 5vw, 48px);
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+      background: linear-gradient(180deg, #ffffff 0%, #fafafa 56%, var(--neon-cyan) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .program-badge {
+      flex-shrink: 0;
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--neon-red);
+      border: 1px solid rgba(255,43,43,0.28);
+      background: rgba(255,43,43,0.04);
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+
+    .program-copy {
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.68);
+      margin-bottom: 14px;
+    }
+
+    .program-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .program-list li {
+      font-size: 12px;
+      color: rgba(255,255,255,0.72);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.6;
+    }
+
+    .program-list li::before {
+      content: '✦';
+      color: var(--neon-cyan);
+      font-size: 11px;
+      margin-top: 1px;
+    }
+
+    .program-cta {
+      margin-top: 18px;
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 11px;
+    }
+
+    @keyframes cardPulse {
+      0% { box-shadow: 0 0 0 rgba(0,229,255,0); }
+      100% { box-shadow: 0 18px 36px rgba(0,229,255,0.07); }
+    }
+
+    .impact-strip {
+      position: relative;
+      min-height: clamp(460px, 66vw, 740px);
+      overflow: hidden;
+      background: #050505;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+    }
+
+    .impact-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background: repeating-linear-gradient(115deg, transparent 0, transparent 76px, rgba(255,255,255,0.016) 76px, rgba(255,255,255,0.016) 78px);
+    }
+
+    .impact-strip-img {
+      position: absolute;
+      inset: -2%;
+      background-image: url('assets/motion-red-energy.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 18%;
+      transform: scale(1.02);
+      will-change: transform;
+      animation: impactFloat 10s ease-in-out infinite alternate;
+      filter: contrast(1.08) saturate(1.06);
+    }
+
+    @keyframes impactFloat {
+      0% { transform: translate3d(0, 0px, 0) scale(1.02); }
+      100% { transform: translate3d(0, -10px, 0) scale(1.05); }
+    }
+
+    @keyframes bannerEnergy {
+      0%, 100% {
+        opacity: 0.18;
+        transform: translate3d(-18%, 0, 0) rotate(-5deg);
+      }
+      48%, 60% {
+        opacity: 0.55;
+        transform: translate3d(18%, -2%, 0) rotate(-5deg);
+      }
+    }
+
+    .impact-strip-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(5,5,5,0.64) 0%, rgba(5,5,5,0.18) 28%, rgba(5,5,5,0.04) 60%, rgba(5,5,5,0.18) 100%),
+        linear-gradient(104deg, rgba(5,5,5,0.54) 0%, rgba(5,5,5,0.08) 40%, rgba(5,5,5,0.12) 100%),
+        radial-gradient(circle at 50% 14%, rgba(255,0,184,0.18) 0%, transparent 18%),
+        radial-gradient(circle at 50% 4%, rgba(0,229,255,0.16) 0%, transparent 14%),
+        radial-gradient(circle at 78% 78%, rgba(255,43,43,0.08) 0%, transparent 24%);
+    }
+
+    .impact-strip-card {
+      position: absolute;
+      left: clamp(22px, 4vw, 44px);
+      bottom: clamp(22px, 4vw, 42px);
+      z-index: 5;
+      width: min(400px, 82%);
+      padding: 18px 18px 16px;
+      background: rgba(8,8,8,0.54);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.22);
+    }
+
+    .impact-strip-kicker {
+      font-family: 'Space Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--neon-pink);
+      margin-bottom: 10px;
+    }
+
+    .impact-strip-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 7vw, 74px);
+      line-height: 0.88;
+      letter-spacing: 0.05em;
+      transform: rotate(-1.5deg);
+      margin-bottom: 10px;
+      text-shadow: 0 12px 28px rgba(0,0,0,0.4);
+      background: linear-gradient(90deg, #ffffff 0%, #ffffff 44%, var(--neon-pink) 72%, var(--neon-red) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .impact-strip-sub {
+      font-size: 13px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.74);
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,255,136,0.08) 0%, transparent 60%),
+        radial-gradient(circle at 78% 18%, rgba(255,43,43,0.08) 0%, transparent 26%);
+      pointer-events: none;
+    }
+
+    .cta::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(120deg, transparent 0, transparent 84px, rgba(255,255,255,0.012) 84px, rgba(255,255,255,0.012) 86px);
+      opacity: 0.4;
+    }
+
+    .cta-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(24px, 4vw, 42px);
+      align-items: start;
+    }
+
+    .cta-copy p {
+      font-size: 15px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.76);
+      max-width: 540px;
+      margin-top: 14px;
+    }
+
+    .cta-list {
+      list-style: none;
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .cta-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: rgba(255,255,255,0.74);
+      line-height: 1.65;
+    }
+
+    .cta-list li::before {
+      content: '■';
+      color: var(--neon-red);
+      font-size: 8px;
+      margin-top: 5px;
+    }
+
+    .form-card {
+      position: relative;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(18,18,18,0.96), rgba(10,10,10,0.96));
+      padding: clamp(20px, 3vw, 28px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 52px; height: 2px;
+      background: var(--neon-red);
+      box-shadow: 0 0 12px rgba(255,43,43,0.4);
+    }
+
+    .form-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 0.9;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+      transform: rotate(-1deg);
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .form-grid input,
+    .form-grid textarea,
+    .form-grid select {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #fff;
+      border-radius: 14px;
+      padding: 14px 14px;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-grid input:focus,
+    .form-grid textarea:focus,
+    .form-grid select:focus {
+      border-color: rgba(0,229,255,0.28);
+      box-shadow: 0 0 0 3px rgba(0,229,255,0.08);
+    }
+
+    .form-grid textarea { min-height: 110px; resize: vertical; }
+
+    .form-grid button {
+      margin-top: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      border-top: 1px solid var(--line-2);
+      padding: 30px 0 38px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.52);
+    }
+
+    .footer-copy a,
+    .legal-footer-links a {
+      color: rgba(255,255,255,0.78);
+      transition: color 0.2s ease;
+    }
+
+    .footer-copy a:hover,
+    .legal-footer-links a:hover {
+      color: var(--neon-cyan);
+    }
+
+    .footer-strong {
+      color: rgba(255,255,255,0.82);
+      font-weight: 800;
+    }
+
+    .legal-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.52);
+    }
+
+    .footer-legal-accordion {
+      grid-column: 1 / -1;
+      display: grid;
+      gap: 10px;
+    }
+
+    .legal-panel {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      border: 1px solid transparent;
+      background: rgba(12,12,12,0.74);
+      transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease, border-color 0.25s ease;
+    }
+
+    .legal-panel.active {
+      max-height: 680px;
+      opacity: 1;
+      padding: 18px;
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    .legal-panel h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .legal-panel p,
+    .legal-panel li {
+      font-size: 12px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.68);
+    }
+
+    .legal-panel ul {
+      display: grid;
+      gap: 6px;
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .legal-panel li::before {
+      content: '■';
+      color: var(--neon-cyan);
+      font-size: 7px;
+      margin-right: 8px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #050505;
+      background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan) 58%, var(--neon-pink));
+      border-radius: 50%;
+      box-shadow: 0 10px 20px rgba(0,229,255,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px) rotate(-4deg);
+      box-shadow: 0 16px 28px rgba(255,0,184,0.16);
+    }
+
+    .social-links svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-top,
+      .about-grid,
+      #skills .section-head,
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid,
+      .programs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-intro {
+        justify-self: start;
+        max-width: 100%;
+      }
+
+      .about-title {
+        max-width: none;
+      }
+
+      .hero-visual-wrap { min-height: 520px; }
+      .about-visual { min-height: 440px; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 22px)); }
+      .ticker { padding: 9px 0; }
+      .nav { align-items: flex-start; padding: 12px 0; }
+      .nav-links { gap: 8px; justify-content: flex-start; }
+      .nav-links a { font-size: 10px; }
+      .skills-grid,
+      .programs-grid,
+      .mini-stats { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .social-links { justify-content: flex-start; }
+      .hero { min-height: auto; padding-top: 22px; }
+      .hero-grid { gap: 18px; }
+      .hero-title { font-size: clamp(54px, 16vw, 96px); max-width: none; margin-left: 0; }
+      .hero-copy,
+      .hero-actions { padding-left: 0; }
+      .hero-visual-wrap,
+      .about-visual,
+      .training-banner,
+      .impact-strip { min-height: 340px; }
+      .section { padding: 40px 0; }
+      .section-title { font-size: clamp(42px, 16vw, 72px); }
+      #about::after {
+        right: 10px;
+        top: 86px;
+        font-size: clamp(76px, 24vw, 124px);
+        opacity: 0.8;
+      }
+      #skills .section-head { gap: 12px; }
+      .section-note { max-width: 100%; font-size: 13px; }
+      .training-banner-card,
+      .impact-strip-card { width: calc(100% - 28px); margin: 14px; left: 14px; bottom: 14px; }
+      .hero-stamp { width: calc(100% - 28px); right: 14px; bottom: 14px; }
+      .legal-panel.active { max-height: 920px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrap">
+    <div class="ticker">
+      <div class="ticker-track">
+        <span class="ticker-item">Confidence Through Movement</span>
+        <span class="ticker-item">Freestyle • Battle Development • Dance Fitness</span>
+        <span class="ticker-item">Raw Energy • Real Foundations • Cypher Mentality</span>
+        <span class="ticker-item">Confidence Through Movement</span>
+        <span class="ticker-item">Freestyle • Battle Development • Dance Fitness</span>
+        <span class="ticker-item">Raw Energy • Real Foundations • Cypher Mentality</span>
+      </div>
+    </div>
+
+    <header>
+      <div class="container nav">
+        <a href="#top" class="brand">
+          <span class="brand-main">NEO x CRYPTIC</span>
+          <span class="brand-sub">Confidence Through Movement</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Training</a>
+          <a href="#programs">Programs</a>
+          <a href="mailto:neoarendse0603@gmail.com?subject=Neo%20x%20Cryptic%20training%20enquiry" class="nav-cta">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy-block reveal">
+            <div class="eyebrow">Battle Development Coach</div>
+            <h1 class="hero-title">NEO <span class="slash">x</span><br>CRYPTIC</h1>
+            <p class="hero-copy">
+              Hip-Hop dance coach, freestyle specialist, and movement mentor helping dancers unlock confidence through movement. This is not soft choreography for the sidelines. This is foundations, control, musicality, stamina, and the mindset to enter the circle with pressure.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="mailto:neoarendse0603@gmail.com?subject=Neo%20x%20Cryptic%20training%20enquiry">Contact Us</a>
+              <a class="btn btn-secondary" href="#programs">See Programs</a>
+            </div>
+          </div>
+
+          <div class="hero-visual-wrap reveal" id="heroSection">
+            <div class="hero-scribble"></div>
+            <div class="hero-card">
+              <div class="hero-img" id="heroImg"></div>
+              <div class="hero-smoke"></div>
+              <div class="hero-overlay"></div>
+              <div class="hero-stamp">
+                <div class="stamp-kicker">Street Energy</div>
+                <div class="stamp-title">MOVE WITH PRESSURE.</div>
+                <div class="stamp-copy">Train for confidence, freestyle, battles, and presence that actually hits when you step into the room.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="about-motion-bg" aria-hidden="true"></div>
+        <div class="container">
+          <div class="about-top reveal">
+            <div class="about-title-wrap">
+              <div class="section-kicker">About Neo x Cryptic</div>
+              <h2 class="about-title">BUILT FOR<br>THE CYPHER</h2>
+            </div>
+            <p class="about-intro">Neo builds dancers with <span class="highlight">freestyle confidence</span>, <span class="highlight">battle awareness</span>, Hip-Hop foundations, and the kind of presence people feel before the first count drops.</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-visual reveal" id="aboutSection">
+              <div class="about-img" id="aboutImg"></div>
+              <div class="about-overlay"></div>
+              <div class="about-noise"></div>
+            </div>
+
+            <div class="about-copy reveal">
+              <div class="about-copy-lead">Technique meets identity. Confidence becomes visible.</div>
+              <p>
+                Neo x Cryptic blends <span class="highlight">Hip-Hop foundations</span>, freestyle development, battle understanding, and movement coaching into training that feels real, not performative. Instead of only teaching routines, the focus is transitions, texture, timing, control, and personal style.
+              </p>
+              <p>
+                Whether you are brand new or already stepping into battle spaces, the goal stays clear: build confidence through movement, sharpen your body control, and learn how to hold your own energy without needing validation from the room.
+              </p>
+              <div class="mini-stats">
+                <div class="mini-stat">
+                  <div class="num">1:1</div>
+                  <div class="label">Mentorship</div>
+                </div>
+                <div class="mini-stat">
+                  <div class="num">ALL</div>
+                  <div class="label">Levels Welcome</div>
+                </div>
+                <div class="mini-stat">
+                  <div class="num">RAW</div>
+                  <div class="label">Cypher Energy</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="section-kicker">What You Build</div>
+              <h2 class="section-title">TRAIN FOR<br>REAL MOVEMENT</h2>
+            </div>
+            <p class="section-note">Neo’s product is movement coaching for dancers who want more than steps: body awareness, freestyle confidence, battle readiness, stamina, musicality, and mental resilience.</p>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-card reveal">
+              <div class="skill-title">FOUNDATIONS</div>
+              <div class="skill-copy">Build strong Hip-Hop movement fundamentals that create cleaner execution, better transitions, and more control.</div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-title">FREESTYLE</div>
+              <div class="skill-copy">Develop personal style, improvisation, musicality, and confidence so you can move without freezing when the beat changes.</div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-title">BATTLE IQ</div>
+              <div class="skill-copy">Learn how to read energy, pace a round, use space, and understand what actually matters in battle environments.</div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-title">STAMINA</div>
+              <div class="skill-copy">Improve conditioning, movement endurance, and physical confidence through dance fitness built for Hip-Hop intensity.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="training-banner reveal" id="trainingBanner">
+        <div class="training-banner-img" id="trainingBannerImg"></div>
+        <div class="training-banner-overlay"></div>
+        <div class="training-banner-card">
+          <div class="section-kicker">Training Atmosphere</div>
+          <h3>HIGH ENERGY.<br>NO HALF STEPS.</h3>
+          <p>
+            Sessions are built to push confidence, sharpen movement, and help dancers understand how to carry their energy with intention. The room should feel alive. The work should feel honest.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="programs">
+        <div class="container">
+          <div class="section-head centered reveal">
+            <div>
+              <div class="section-kicker">Ways To Train</div>
+              <h2 class="section-title">PROGRAMS THAT<br>HIT DIFFERENT</h2>
+            </div>
+          </div>
+
+          <div class="programs-grid">
+            <div class="program-card reveal">
+              <div class="program-top">
+                <div class="program-title">BEGINNER<br>ENTRY</div>
+                <div class="program-badge">Pre-Launch</div>
+              </div>
+              <p class="program-copy">For dancers who want to build confidence, understand Hip-Hop movement, and stop feeling intimidated by freestyle.</p>
+              <ul class="program-list">
+                <li>Hip-Hop foundations and groove training</li>
+                <li>Confidence-building movement drills</li>
+                <li>Beginner-friendly freestyle prompts</li>
+              </ul>
+              <a class="btn btn-secondary program-cta" href="mailto:neoarendse0603@gmail.com?subject=Beginner%20Entry%20training%20enquiry">Enquire About Beginner Entry</a>
+            </div>
+
+            <div class="program-card reveal">
+              <div class="program-top">
+                <div class="program-title">FREESTYLE<br>DEVELOPMENT</div>
+                <div class="program-badge">Core Offer</div>
+              </div>
+              <p class="program-copy">For dancers ready to build their own style, improve musicality, and move with more instinct, confidence, and control.</p>
+              <ul class="program-list">
+                <li>Freestyle frameworks and transition work</li>
+                <li>Personal style development</li>
+                <li>Musicality, texture, and round building</li>
+              </ul>
+              <a class="btn btn-primary program-cta" href="mailto:neoarendse0603@gmail.com?subject=Freestyle%20Development%20training%20enquiry">Enquire About Freestyle</a>
+            </div>
+
+            <div class="program-card reveal">
+              <div class="program-top">
+                <div class="program-title">BATTLE<br>READINESS</div>
+                <div class="program-badge">High Impact</div>
+              </div>
+              <p class="program-copy">For dancers preparing to step into cyphers and battle spaces with sharper strategy, stronger presence, and better stamina.</p>
+              <ul class="program-list">
+                <li>Battle mentality and energy control</li>
+                <li>Round structure and response training</li>
+                <li>Performance pressure and confidence prep</li>
+              </ul>
+              <a class="btn btn-secondary program-cta" href="mailto:neoarendse0603@gmail.com?subject=Battle%20Readiness%20training%20enquiry">Enquire About Battle</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="impact-strip reveal" id="impactStrip">
+        <div class="impact-strip-img" id="impactStripImg"></div>
+        <div class="impact-strip-overlay"></div>
+        <div class="impact-strip-card">
+          <div class="impact-strip-kicker">Cypher Energy</div>
+          <div class="impact-strip-title">RAW STYLE.<br>NO SOFT MOVES.</div>
+          <div class="impact-strip-sub">Built for dancers who want to step into the room with pressure, presence, and identity. This is the energy people feel before you even move.</div>
+        </div>
+      </section>
+
+      <section class="section cta" id="signup">
+        <div class="container cta-grid">
+          <div class="cta-copy reveal">
+            <div class="section-kicker">Pre-Launch Access</div>
+            <h2 class="section-title">ENTER<br>THE CIRCLE</h2>
+            <p>
+              If you want first access to classes, training drops, pre-launch offers, and future sessions with Neo x Cryptic, join the list now. This is for dancers who want to move with more confidence, more aggression, and more identity.
+            </p>
+            <ul class="cta-list">
+              <li>Be first to hear when programs officially open</li>
+              <li>Get access to early offers and limited spots</li>
+              <li>Stay connected to future battle-focused training drops</li>
+            </ul>
+          </div>
+
+          <div class="form-card reveal">
+            <h3>JOIN THE LIST</h3>
+            <form class="form-grid" id="enquiryForm" action="mailto:neoarendse0603@gmail.com" method="post" enctype="text/plain">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="email" name="email" placeholder="Your email" required />
+              <select name="interest" required>
+                <option value="" disabled selected>I’m interested in...</option>
+                <option>Beginner Entry</option>
+                <option>Freestyle Development</option>
+                <option>Battle Readiness</option>
+                <option>All future updates</option>
+              </select>
+              <textarea name="message" placeholder="Tell us your dance level or what you want to build..." required></textarea>
+              <button type="submit" class="btn btn-primary">I’m Ready</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-copy footer-strong">© 2026 Cryptic. All rights reserved.</div>
+          <div class="footer-copy">All copyright belongs to Cryptic. No reproduction of the same under any circumstance.</div>
+          <div class="footer-copy">Neo x Cryptic — Confidence Through Movement • Freestyle • Battle Development • Dance Fitness</div>
+          <div class="footer-copy"><a href="mailto:neoarendse0603@gmail.com">neoarendse0603@gmail.com</a></div>
+          <div class="legal-footer-links">
+            <a href="#terms-panel" class="legal-toggle" data-target="terms-panel" aria-expanded="false">Terms & Conditions</a>
+            <a href="#privacy-panel" class="legal-toggle" data-target="privacy-panel" aria-expanded="false">Privacy Policy</a>
+          </div>
+        </div>
+        <div class="social-links" aria-label="Social media links">
+          <a href="https://www.tiktok.com/@cryptic.bdc_official" target="_blank" rel="noopener" aria-label="TikTok @cryptic.bdc_official">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 2c.35 2.24 1.6 3.57 3.77 3.72v3.43a7.55 7.55 0 0 1-3.72-.94v6.92c0 3.5-2.15 6.54-6.05 6.54-3.52 0-5.98-2.46-5.98-5.74 0-3.67 2.8-6.11 6.77-5.75v3.6c-1.7-.26-3.08.51-3.08 2.04 0 1.22.9 2.13 2.13 2.13 1.44 0 2.34-.88 2.34-2.78V2h3.82Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/cryptic.bdc_official" target="_blank" rel="noopener" aria-label="Instagram @cryptic.bdc_official">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2.1a3.7 3.7 0 0 0-3.7 3.7v8.4a3.7 3.7 0 0 0 3.7 3.7h8.4a3.7 3.7 0 0 0 3.7-3.7V7.8a3.7 3.7 0 0 0-3.7-3.7H7.8Zm4.2 3.2a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2.1a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm5-2.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/cryptic.bdc_official" target="_blank" rel="noopener" aria-label="Facebook @cryptic.bdc_official">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 22v-8.54h2.86l.43-3.33H13.7V8c0-.96.27-1.62 1.65-1.62h1.76V3.4A23.4 23.4 0 0 0 14.55 3c-2.54 0-4.28 1.55-4.28 4.4v2.73H7.4v3.33h2.87V22h3.43Z"/></svg>
+          </a>
+        </div>
+        <div class="footer-legal-accordion">
+          <article class="legal-panel" id="terms-panel">
+            <h3>Terms & Conditions</h3>
+            <p>By using this website or submitting an enquiry, you agree to use Neo x Cryptic content, training information, visuals, and brand materials respectfully and only for personal enquiry purposes.</p>
+            <ul>
+              <li>All website content, visuals, copy, branding, programme descriptions, and creative material belong to Cryptic.</li>
+              <li>No reproduction, copying, resale, redistribution, editing, reposting, or commercial use of the same is allowed under any circumstance without written permission from Cryptic.</li>
+              <li>Training availability, pricing, programmes, schedules, and offers may change before confirmation by email.</li>
+              <li>Participation in dance training is voluntary, and dancers are responsible for disclosing relevant health or injury concerns before taking part.</li>
+              <li>Enquiries submitted through this website do not create a booking until confirmed directly by Neo x Cryptic.</li>
+            </ul>
+          </article>
+          <article class="legal-panel" id="privacy-panel">
+            <h3>Privacy Policy</h3>
+            <p>Neo x Cryptic only collects the personal details you choose to submit through the enquiry form or email link, such as your name, email address, dance level, and training interest.</p>
+            <ul>
+              <li>Your details are used to respond to enquiries, share relevant training information, and manage potential bookings.</li>
+              <li>Your personal information will not be sold or intentionally shared with unrelated third parties.</li>
+              <li>Email enquiries are sent directly to neoarendse0603@gmail.com.</li>
+              <li>You may request that your enquiry details be corrected or removed by emailing neoarendse0603@gmail.com.</li>
+              <li>This website may rely on standard browser and hosting logs for security, performance, and go-live monitoring.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    const heroImg = document.getElementById('heroImg');
+    const heroSection = document.getElementById('heroSection');
+    const aboutImg = document.getElementById('aboutImg');
+    const aboutSection = document.getElementById('aboutSection');
+    const trainingBannerImg = document.getElementById('trainingBannerImg');
+    const trainingBanner = document.getElementById('trainingBanner');
+    const impactStripImg = document.getElementById('impactStripImg');
+    const impactStrip = document.getElementById('impactStrip');
+    const enquiryForm = document.getElementById('enquiryForm');
+
+    if (enquiryForm) {
+      enquiryForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(enquiryForm);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const interest = formData.get('interest') || '';
+        const message = formData.get('message') || '';
+        const subject = encodeURIComponent('Neo x Cryptic training enquiry');
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nInterest: ${interest}\n\nMessage:\n${message}`
+        );
+
+        window.location.href = `mailto:neoarendse0603@gmail.com?subject=${subject}&body=${body}`;
+      });
+    }
+
+    const legalToggles = document.querySelectorAll('.legal-toggle');
+    const legalPanels = document.querySelectorAll('.legal-panel');
+
+    legalToggles.forEach(toggle => {
+      toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const targetId = toggle.dataset.target;
+        const targetPanel = document.getElementById(targetId);
+        const isOpen = targetPanel && targetPanel.classList.contains('active');
+
+        legalPanels.forEach(panel => panel.classList.remove('active'));
+        legalToggles.forEach(link => link.setAttribute('aria-expanded', 'false'));
+
+        if (targetPanel && !isOpen) {
+          targetPanel.classList.add('active');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    let ticking = false;
+
+    function handleParallax() {
+      const windowH = window.innerHeight;
+
+      if (heroImg && heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        if (rect.top < windowH && rect.bottom > 0) {
+          const centerOffset = (rect.top + rect.height / 2) - windowH / 2;
+          const move = centerOffset * -0.02;
+          heroImg.style.transform = `translate3d(0, ${move}px, 0) scale(1)`;
+        }
+      }
+
+      if (aboutImg && aboutSection) {
+        const rect = aboutSection.getBoundingClientRect();
+        if (rect.top < windowH && rect.bottom > 0) {
+          const centerOffset = (rect.top + rect.height / 2) - windowH / 2;
+          const move = centerOffset * -0.05;
+          aboutImg.style.transform = `translate3d(0, ${move}px, 0) scale(1.08)`;
+        }
+      }
+
+      if (trainingBannerImg && trainingBanner) {
+        const rect = trainingBanner.getBoundingClientRect();
+        if (rect.top < windowH && rect.bottom > 0) {
+          const centerOffset = (rect.top + rect.height / 2) - windowH / 2;
+          const move = centerOffset * -0.015;
+          trainingBannerImg.style.transform = `translate3d(0, ${move}px, 0) scale(1)`;
+        }
+      }
+
+      if (impactStripImg && impactStrip) {
+        const rect = impactStrip.getBoundingClientRect();
+        if (rect.top < windowH && rect.bottom > 0) {
+          const centerOffset = (rect.top + rect.height / 2) - windowH / 2;
+          const move = centerOffset * -0.06;
+          impactStripImg.style.transform = `translate3d(0, ${move}px, 0) scale(1.04)`;
+        }
+      }
+
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(handleParallax);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    handleParallax();
+  </script>
+</body>
+</html>
